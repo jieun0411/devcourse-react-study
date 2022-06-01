@@ -1,22 +1,23 @@
-// 요구사항
-// 1. Emoji 리스트를 보여준다.
-// 2. 검색을 통해 필터링한다.
-// 3. Emoji를 클릭하면 복사한다.
-
-import { useState } from "react";
+import styled from "@emotion/styled";
+import NewTaskForm from "./components/NewTaskForm";
+import TaskList from "./components/TaskList";
 import Header from "./components/Header";
-import SearchBox from "./components/SearchBox";
-import emojiJson from "./data/emoji.json";
-import EmojiList from "./components/EmojiList";
+import TaskProvider from "./contexts/TaskProvider";
+
+const Container = styled.div`
+  width: 400px;
+  margin: 0 auto;
+`;
 
 function App() {
-  const [keyword, setKeyword] = useState("");
   return (
-    <div>
-      <Header />
-      <SearchBox onSearch={setKeyword} />
-      <EmojiList emojis={emojiJson} keyword={keyword} />
-    </div>
+    <TaskProvider>
+      <Container>
+        <Header>ToDo</Header>
+        <NewTaskForm />
+        <TaskList css={{ marginTop: "16px" }} />
+      </Container>
+    </TaskProvider>
   );
 }
 
