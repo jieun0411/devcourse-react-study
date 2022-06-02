@@ -20,6 +20,7 @@ const Content = styled.span`
   margin-left: 8px;
   font-size: 14px;
   text-decoration: ${({ complete }) => (complete ? "line-through" : "none")};
+  // styled 컴포넌트도 prop을 받을 수 있습니다. (취소선 그리기 로직)
 `;
 
 const RemoveButton = styled.button`

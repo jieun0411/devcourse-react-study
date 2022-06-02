@@ -28,6 +28,7 @@ const TaskProvider = ({ children }) => {
   };
 
   const removeTask = (id) => {
+    // filter를 사용하여 id와 일치하지 않는 것만 남가는 로직입니다.
     setTasks(tasks.filter((item) => item.id !== id));
   };
 
