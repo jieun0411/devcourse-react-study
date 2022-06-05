@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import ImageComponent from "../Image";
 import AvatarGroup from "./AvatarGroup";
@@ -61,11 +62,11 @@ const Avatar = ({
 };
 
 Avatar.defaultProps = {
-  __TYPE: "Avatar",
+  __TYPE: PropTypes.oneOf(["Avatar"]),
 };
 
 Avatar.propTypes = {
-  __TYPE: "Avatar",
+  __TYPE: PropTypes.oneOf(["Avatar"]),
 };
 
 Avatar.Group = AvatarGroup;
